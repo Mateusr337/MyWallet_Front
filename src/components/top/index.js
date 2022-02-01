@@ -1,12 +1,10 @@
 import styled from "styled-components";
-import { IoExitOutline } from "react-icons/io5";
 
-export default function Top() {
+export default function Top({ description }) {
 
     return (
         <Container>
-            <span>Olá, Fulano</span>
-            <IoExitOutline />
+            {description}
         </Container>
     );
 }

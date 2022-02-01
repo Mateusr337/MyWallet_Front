@@ -1,4 +1,4 @@
-import { Button, Container } from "../pageLogin/style";
+import { Button, Container } from "../pageRegister/style";
 import Title from "../title";
 
 export default function PageRegister() {
@@ -14,7 +14,7 @@ export default function PageRegister() {
                 <button type='submit'>Cadastrar</button>
             </form>
 
-            <Button>Já tem uma conta? Entre agora!</Button>
+            <Button to='/' >Já tem uma conta? Entre agora!</Button>
         </Container>
     );
 }

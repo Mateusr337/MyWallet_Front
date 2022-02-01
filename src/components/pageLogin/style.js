@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
     width: 100vw;
@@ -14,7 +14,7 @@ export const Container = styled.div`
     justify-content: center;
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
     background-color: transparent;
 
     font-family: Raleway;

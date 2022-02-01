@@ -12,7 +12,7 @@ export default function PageLogin() {
                 <button type="submit">Entrar</button>
             </form>
 
-            <Button>Primeira vez? Cadastre-se!</Button>
+            <Button to='/register' >Primeira vez? Cadastre-se!</Button>
 
         </Container>
     );

@@ -1,16 +1,17 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 
-export default function TransactionButton({ description }) {
+export default function TransactionButton({ description, path }) {
 
     return (
-        <Container>
+        <Container to={path} >
             {description}
         </Container>
     );
 }
 
-const Container = styled.div`
+const Container = styled(Link)`
     width: 100%;
     height: 114px;
 
