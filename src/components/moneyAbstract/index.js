@@ -1,14 +1,31 @@
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 
 export default function MoneyAbstract({ historyMoney }) {
 
+    const [total, setTotal] = useState(0);
+
+    useEffect(() => {
+        let soma = 0;
+        historyMoney.forEach(operation => {
+            if (operation.type === 'input') {
+                soma += parseFloat(operation.value);
+            } else {
+                soma -= parseFloat(operation.value);
+            }
+        });
+        setTotal(soma);
+    }, [historyMoney]);
+
 
     return (
-        <Conatainer>
-            <Description>SALDO</Description>
-            <Value>36.40</Value>
-        </Conatainer>
+        historyMoney && (
+            <Conatainer>
+                <Description>SALDO</Description>
+                <Value total={total} >{Math.abs(total).toFixed(2)}</Value>
+            </Conatainer>
+        )
     );
 }
 
@@ -35,4 +52,5 @@ const Description = styled.div`
 `;
 
 const Value = styled.div`
+    ${({ total }) => total > 0 ? `color: #03AC00;` : `color: #C70000;`}
 `;

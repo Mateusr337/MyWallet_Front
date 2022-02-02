@@ -16,7 +16,7 @@ export default function PageLogin() {
         password: ''
     });
 
-    user && navigate('/home');
+    if (user) navigate('/home');
 
     function changeInputs(e) {
         setUserLogin({ ...userLogin, [e.target.name]: e.target.value });

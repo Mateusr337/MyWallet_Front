@@ -3,9 +3,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import PageHome from "./components/pageHome";
 import PageLogin from "./components/pageLogin";
 import PageRegister from "./components/pageRegister";
-import PageOperationExit from "./components/pageOperationExit";
-import PageOperationInput from "./components/pageOperationInput";
 import { AuthProvider } from "./provaiders/auth";
+import PageOperation from "./components/pageOperation";
 
 import './reset.css';
 import './style.css';
@@ -18,8 +17,7 @@ export default function App() {
                 <Route path="/" element={<PageLogin />} />
                 <Route path="/register" element={<PageRegister />} />
                 <Route path="/home" element={<PageHome />} />
-                <Route path="/operationExit" element={<PageOperationExit />} />
-                <Route path="/operationInput" element={<PageOperationInput />} />
+                <Route path="/operation/:typeOperation" element={<PageOperation />} />
             </Routes>
         </BrowserRouter>
     );

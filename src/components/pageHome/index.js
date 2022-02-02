@@ -18,19 +18,23 @@ export default function PageHome() {
         navigate('/');
     }
 
+    const styleHover = {
+        cursor: 'pointer'
+    };
+
     return (
         user !== null && (
             <Container>
-                <Top description={<><span>Olá, {user.name}</span><IoExitOutline onClick={exitApp} /></>} />
+                <Top description={<><span>Olá, {user.name}</span><IoExitOutline onClick={exitApp} style={styleHover} /></>} />
                 <ScreenMoney />
                 <Transactions>
                     <TransactionButton
-                        path={'/operationInput'}
+                        path={'/operation/input'}
                         description={<><IoAddCircleOutline /> <span>Nova <br /> Entrada</span></>}
                     />
 
                     <TransactionButton
-                        path={'/operationExit'}
+                        path={'/operation/exit'}
                         description={<><IoRemoveCircleOutline /> <span>Nova <br /> Saída</span></>}
                     />
                 </Transactions>

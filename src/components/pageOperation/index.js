@@ -5,9 +5,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useAuth } from "../../provaiders/auth";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
-export default function PageOperationInput() {
+export default function PageOperation() {
 
     const navigate = useNavigate();
     const { user } = useAuth();
@@ -15,6 +15,9 @@ export default function PageOperationInput() {
         value: undefined,
         description: ""
     });
+    const { typeOperation } = useParams();
+    let text;
+    typeOperation === 'input' ? text = 'entrada' : text = 'saída';
 
     function changeInputs(e) {
         setOperationData({ ...operationData, [e.target.name]: e.target.value });
@@ -25,9 +28,10 @@ export default function PageOperationInput() {
 
         if (!operationData.value || !operationData.description) {
             toast.warn('Todos os campos são obrigatórios');
+            return;
         }
         axios.post('http://localhost:5000/operation',
-            { ...operationData, type: 'input' },
+            { ...operationData, type: typeOperation },
             { headers: { authorization: `Bearer ${user.token}` } }
         ).then(res => {
             navigate('/home');
@@ -35,15 +39,16 @@ export default function PageOperationInput() {
         });
     }
 
+
     return (
         <Container>
             <ToastContainer position="top-center" limit={1} />
-            <Top description={<span>Nova entrada</span>} />
+            <Top description={<span>Nova {text}</span>} />
 
             <form onSubmit={e => postOperation(e)} >
                 <input type='number' placeholder='Valor' name='value' value={operationData.value} onChange={e => changeInputs(e)} />
                 <input type='text' placeholder='Descrição' name='description' value={operationData.description} onChange={e => changeInputs(e)} />
-                <button type='submit'>Salvar entrada</button>
+                <button type='submit'>Salvar {text}</button>
             </form>
         </Container>
     );

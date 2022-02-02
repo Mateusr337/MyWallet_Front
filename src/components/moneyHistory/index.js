@@ -6,7 +6,7 @@ export default function MoneyHistory({ operation }) {
     return (
         <Conatainer>
             <span><Date>{operation.date}</Date><Description>{operation.description}</Description></span>
-            <Value type={operation.type} >{operation.value}</Value>
+            <Value type={operation.type} >{parseFloat(operation.value).toFixed(2)}</Value>
         </Conatainer>
     );
 }
