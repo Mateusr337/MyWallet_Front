@@ -25,10 +25,11 @@ export default function ScreenMoney() {
             {history.length !== 0 ? (
                 <>
                     <div>
-                        <MoneyHistory buy={false} />
-                        <MoneyHistory buy={true} />
+                        {history.map((operation, index) => (
+                            <MoneyHistory key={index} operation={operation} />
+                        ))}
                     </div>
-                    <MoneyAbstract />
+                    <MoneyAbstract historyMoney={history} />
                 </>
             ) : (<Message>Não há registros de <br /> entrada ou saída</Message>)}
         </Container>

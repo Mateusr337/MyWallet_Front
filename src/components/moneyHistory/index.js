@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 
-export default function MoneyHistory({ buy }) {
+export default function MoneyHistory({ operation }) {
 
     return (
         <Conatainer>
-            <span><Date>30/11</Date><Description>Almoço mãe</Description></span>
-            <Value buy={buy}>36.40</Value>
+            <span><Date>{operation.date}</Date><Description>{operation.description}</Description></span>
+            <Value type={operation.type} >{operation.value}</Value>
         </Conatainer>
     );
 }
@@ -15,6 +15,7 @@ const Conatainer = styled.div`
     width: 100%;
     height: 35px;
 
+    gap: 5px;
 
     font-family: Raleway;
     font-size: 16px;
@@ -39,6 +40,6 @@ const Description = styled.div`
 `;
 
 const Value = styled.div`
-    ${({ buy }) => buy === true ? `color: #03AC00;` : `color: #C70000;`}
+    ${({ type }) => type === 'input' ? `color: #03AC00;` : `color: #C70000;`}
     justify-content: end;
 `;

@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 
-export default function MoneyAbstract() {
+export default function MoneyAbstract({ historyMoney }) {
+
 
     return (
         <Conatainer>

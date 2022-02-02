@@ -4,9 +4,13 @@ import Top from "../top";
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
+import { useAuth } from "../../provaiders/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function PageOperationInput() {
 
+    const navigate = useNavigate();
+    const { user } = useAuth();
     const [operationData, setOperationData] = useState({
         value: undefined,
         description: ""
@@ -22,6 +26,13 @@ export default function PageOperationInput() {
         if (!operationData.value || !operationData.description) {
             toast.warn('Todos os campos são obrigatórios');
         }
+        axios.post('http://localhost:5000/operation',
+            { ...operationData, type: 'input' },
+            { headers: { authorization: `Bearer ${user.token}` } }
+        ).then(res => {
+            navigate('/home');
+            window.location.reload();
+        });
     }
 
     return (
