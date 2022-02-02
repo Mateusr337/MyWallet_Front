@@ -4,10 +4,11 @@ import PageHome from "./components/pageHome";
 import PageLogin from "./components/pageLogin";
 import PageRegister from "./components/pageRegister";
 import PageOperationExit from "./components/pageOperationExit";
+import PageOperationInput from "./components/pageOperationInput";
+import { AuthProvider } from "./provaiders/auth";
 
 import './reset.css';
 import './style.css';
-import PageOperationInput from "./components/pageOperationInput";
 
 export default function App() {
 
@@ -24,4 +25,8 @@ export default function App() {
     );
 }
 
-render(<App />, document.querySelector('.root'));
+render(
+    <AuthProvider>
+        <App />
+    </AuthProvider>,
+    document.querySelector('.root'));

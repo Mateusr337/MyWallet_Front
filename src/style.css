@@ -35,17 +35,21 @@ input {
     width: 100%;
     height: 58px;
 
+    padding: 15px;
     background-color: #fff;
     border: none;
     border-radius: 5px;
+
+    font-family: Raleway;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
 }
 
 input::placeholder {
-    padding: 15px;
+    padding: 1px;
 
     font-family: Raleway;
-    font-style: normal;
-    font-weight: normal;
     font-size: 20px;
     line-height: 23px;
     color: #000000;

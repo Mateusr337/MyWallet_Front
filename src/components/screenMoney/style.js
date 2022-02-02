@@ -13,3 +13,17 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: space-between;
 `;
+
+export const Message = styled.span`
+    height: 100%;
+
+    font-family: Raleway;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+    color: #868686;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`;
