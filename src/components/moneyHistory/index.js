@@ -1,28 +1,20 @@
 import styled from "styled-components";
 import { IoCloseSharp } from "react-icons/io5";
-import axios from "axios";
-import { useAuth } from "../../provaiders/auth";
+import ConfirmScreen from "../confirmScreen";
+import { useState } from "react";
 
 
 export default function MoneyHistory({ operation }) {
 
-    const { user } = useAuth();
-
-    function removeOperation() {
-        axios.delete(`http://localhost:5000/operation/${operation.id}`, {
-            headers: { authorization: `Bearer ${user.token}` }
-        }).then(res => {
-            window.location.reload();
-        });
-    }
-
+    const [confirmScreen, setConfirmScreen] = useState(false);
 
     return (
         <Conatainer>
             <span><Date>{operation.date}</Date><Description>{operation.description}</Description></span>
+            {confirmScreen && <ConfirmScreen setConfirmScreen={setConfirmScreen} operation={operation} />}
             <MoneyContainer>
                 <Value type={operation.type} >{parseFloat(operation.value).toFixed(2)}</Value>
-                <IoCloseSharp onClick={removeOperation} />
+                <IoCloseSharp onClick={() => setConfirmScreen(true)} />
             </MoneyContainer>
         </Conatainer>
     );
