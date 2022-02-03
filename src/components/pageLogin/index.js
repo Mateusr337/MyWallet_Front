@@ -4,13 +4,16 @@ import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import { useAuth } from '../../provaiders/auth';
 import Title from '../title';
-import { Container, Button } from './style';
+import { Container, Button, ImgLoad } from './style';
 import axios from 'axios';
+import load from '../../assets/loadGrey.gif';
+
 
 export default function PageLogin() {
 
     const navigate = useNavigate();
     const { user } = useAuth();
+    const [loading, setLoading] = useState(false);
     const [userLogin, setUserLogin] = useState({
         email: '',
         password: ''
@@ -24,8 +27,10 @@ export default function PageLogin() {
 
     function login(e) {
         e.preventDefault();
+        setLoading(true);
         if (!userLogin.email || !userLogin.password) {
             toast.warn('Todos os campos são obrigatórios');
+            setTimeout(() => setLoading(false), 5000);
             return;
         }
         const promise = axios.post('http://localhost:5000/sign-in', { ...userLogin });
@@ -36,6 +41,7 @@ export default function PageLogin() {
         }).catch(err => {
             toast.error('E-mail ou senha invalido');
         });
+        setLoading(false);
     }
 
     return (
@@ -46,7 +52,9 @@ export default function PageLogin() {
             <form onSubmit={e => login(e)}>
                 <input type="email" placeholder="E-mail" name='email' value={userLogin.email} onChange={changeInputs} />
                 <input type="password" placeholder="Senha" name='password' value={userLogin.password} onChange={changeInputs} />
-                <button type="submit">Entrar</button>
+                <button type="submit" disabled={loading}>
+                    {loading ? <ImgLoad><img src={load} /></ImgLoad> : <span>Entrar</span>}
+                </button>
             </form>
 
             <Button to='/register' >Primeira vez? Cadastre-se!</Button>

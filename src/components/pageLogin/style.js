@@ -24,3 +24,12 @@ export const Button = styled(Link)`
     line-height: 18px;
     color: #FFFFFF;
 `;
+
+export const ImgLoad = styled.div`
+    height: 100%;
+    width: 100%;
+
+    img {
+        height: 100%;
+    }
+`;

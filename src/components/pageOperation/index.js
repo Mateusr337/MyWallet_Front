@@ -6,11 +6,13 @@ import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useAuth } from "../../provaiders/auth";
 import { useNavigate, useParams } from "react-router-dom";
+import load from '../../assets/loadGrey.gif';
 
 export default function PageOperation() {
 
     const navigate = useNavigate();
     const { user } = useAuth();
+    const [loading, setLoading] = useState(false);
     const [operationData, setOperationData] = useState({
         value: undefined,
         description: ""
@@ -25,9 +27,11 @@ export default function PageOperation() {
 
     function postOperation(e) {
         e.preventDefault();
+        setLoading(true);
 
         if (!operationData.value || !operationData.description) {
             toast.warn('Todos os campos são obrigatórios');
+            setTimeout(() => setLoading(false), 5000);
             return;
         }
         axios.post('http://localhost:5000/operation',
@@ -48,7 +52,9 @@ export default function PageOperation() {
             <form onSubmit={e => postOperation(e)} >
                 <input type='number' placeholder='Valor' name='value' value={operationData.value} onChange={e => changeInputs(e)} />
                 <input type='text' placeholder='Descrição' name='description' value={operationData.description} onChange={e => changeInputs(e)} />
-                <button type='submit'>Salvar {text}</button>
+                <button type='submit'>
+                    {loading ? <ImgLoad><img src={load} /></ImgLoad> : <span>Salvar {text}</span>}
+                </button>
             </form>
         </Container>
     );
@@ -63,4 +69,13 @@ const Container = styled.div`
 
     display: flex;
     flex-direction: column;
+`;
+
+const ImgLoad = styled.div`
+    height: 100%;
+    width: 100%;
+
+    img {
+        height: 100%;
+    }
 `;

@@ -1,14 +1,16 @@
 import { useState } from "react";
-import { Button, Container } from "../pageRegister/style";
+import { Button, Container, ImgLoad } from "./style";
 import Title from "../title";
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import load from '../../assets/loadGrey.gif';
 
 
 export default function PageRegister() {
 
+    const [loading, setLoading] = useState(false);
     const [userRegister, setUserRegister] = useState({
         name: '',
         email: '',
@@ -19,12 +21,15 @@ export default function PageRegister() {
 
     function checkInputs(e) {
         e.preventDefault();
+        setLoading(true);
 
         if (!userRegister.name || !userRegister.email || !userRegister.password || !userRegister.confirmPassword) {
             toast.warn('Todos os campos são obrigatórios');
+            setTimeout(() => setLoading(false), 5000);
             return;
         } else if (userRegister.password !== userRegister.confirmPassword) {
             toast.warn('As senhas não conferem');
+            setTimeout(() => setLoading(false), 5000);
             return;
         }
         delete userRegister.confirmPassword;
@@ -34,6 +39,7 @@ export default function PageRegister() {
         }).catch(err => {
             console.log(err);
         });
+        setLoading(false);
     }
 
     function changeInputs(e) {
@@ -50,7 +56,9 @@ export default function PageRegister() {
                 <input type='email' placeholder='E-mail' name='email' value={userRegister.email} onChange={changeInputs} />
                 <input type='password' placeholder='Senha' name='password' value={userRegister.password} onChange={changeInputs} />
                 <input type='password' placeholder='Confirme a senha' name='confirmPassword' value={userRegister.confirmPassword} onChange={changeInputs} />
-                <button type='submit'>Cadastrar</button>
+                <button type='submit' disabled={loading}>
+                    {loading ? <ImgLoad><img src={load} /></ImgLoad> : <span>Entrar</span>}
+                </button>
             </form>
 
             <Button to='/' >Já tem uma conta? Entre agora!</Button>

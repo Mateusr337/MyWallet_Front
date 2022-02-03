@@ -16,6 +16,7 @@ export default function PageHome() {
     function exitApp() {
         localStorage.clear();
         navigate('/');
+        window.location.reload();
     }
 
     const styleHover = {

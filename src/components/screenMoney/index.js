@@ -3,11 +3,13 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../../provaiders/auth";
 import MoneyAbstract from "../moneyAbstract";
 import MoneyHistory from "../moneyHistory";
-import { Container, Message, Operations } from "./style";
+import { Container, Message, Operations, ImgLoad } from "./style";
+import load from '../../assets/loadPurple.gif';
 
 export default function ScreenMoney() {
 
     const [history, setHistory] = useState([]);
+    const [loading, setLoading] = useState(true);
     const { user } = useAuth();
 
     useEffect(() => {
@@ -18,11 +20,12 @@ export default function ScreenMoney() {
                 setHistory(res.data);
             });
         }
+        setLoading(false);
     }, [user]);
 
     return (
         <Container>
-            {history.length !== 0 ? (
+            {(history.length !== 0 && !loading) && (
                 <>
                     <Operations>
                         {history.map((operation, index) => (
@@ -31,7 +34,13 @@ export default function ScreenMoney() {
                     </Operations>
                     <MoneyAbstract historyMoney={history} />
                 </>
-            ) : (<Message>Não há registros de <br /> entrada ou saída</Message>)}
-        </Container>
+            )}
+
+            {(history.length === 0 && !loading) && (
+                <Message>Não há registros de <br /> entrada ou saída</Message>
+            )}
+
+            {loading && <ImgLoad src={load} />}
+        </Container >
     );
 }

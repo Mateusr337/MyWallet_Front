@@ -35,3 +35,9 @@ export const Operations = styled.div`
     display: flex;
     flex-direction: column;
 `;
+
+export const ImgLoad = styled.img`
+    width: 100px;
+
+    margin: auto;
+`;
