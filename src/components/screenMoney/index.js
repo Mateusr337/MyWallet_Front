@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../../provaiders/auth";
 import MoneyAbstract from "../moneyAbstract";
 import MoneyHistory from "../moneyHistory";
-import { Container, Message } from "./style";
+import { Container, Message, Operations } from "./style";
 
 export default function ScreenMoney() {
 
@@ -24,11 +24,11 @@ export default function ScreenMoney() {
         <Container>
             {history.length !== 0 ? (
                 <>
-                    <div>
+                    <Operations>
                         {history.map((operation, index) => (
                             <MoneyHistory key={index} operation={operation} />
                         ))}
-                    </div>
+                    </Operations>
                     <MoneyAbstract historyMoney={history} />
                 </>
             ) : (<Message>Não há registros de <br /> entrada ou saída</Message>)}

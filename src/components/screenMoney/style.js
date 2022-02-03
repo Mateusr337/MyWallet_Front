@@ -8,6 +8,7 @@ export const Container = styled.div`
     background-color: #fff;
     border-radius: 5px;
     padding: 11px;
+    padding-top: 23px;
 
     display: flex;
     flex-direction: column;
@@ -26,4 +27,11 @@ export const Message = styled.span`
     display: flex;
     align-items: center;
     justify-content: center;
+`;
+
+export const Operations = styled.div`
+    gap: 10px; 
+    
+    display: flex;
+    flex-direction: column;
 `;
