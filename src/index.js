@@ -8,6 +8,7 @@ import PageOperation from "./components/pageOperation";
 
 import './reset.css';
 import './style.css';
+import PageUpdateOperation from "./components/PageUpdateOperation";
 
 export default function App() {
 
@@ -18,6 +19,7 @@ export default function App() {
                 <Route path="/register" element={<PageRegister />} />
                 <Route path="/home" element={<PageHome />} />
                 <Route path="/operation/:typeOperation" element={<PageOperation />} />
+                <Route path="/operationUpdate/:idOperation" element={<PageUpdateOperation />} />
             </Routes>
         </BrowserRouter>
     );

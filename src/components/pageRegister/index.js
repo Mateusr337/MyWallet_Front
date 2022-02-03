@@ -57,7 +57,7 @@ export default function PageRegister() {
                 <input type='password' placeholder='Senha' name='password' value={userRegister.password} onChange={changeInputs} />
                 <input type='password' placeholder='Confirme a senha' name='confirmPassword' value={userRegister.confirmPassword} onChange={changeInputs} />
                 <button type='submit' disabled={loading}>
-                    {loading ? <ImgLoad><img src={load} /></ImgLoad> : <span>Entrar</span>}
+                    {loading ? <ImgLoad><img src={load} alt='Loading' /></ImgLoad> : <span>Entrar</span>}
                 </button>
             </form>
 
