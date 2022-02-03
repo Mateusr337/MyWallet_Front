@@ -15,7 +15,7 @@ export const Container = styled.div`
 `;
 
 export const Button = styled(Link)`
-    background-color: transparent;
+    background-color: #9056BF;
 
     font-family: Raleway;
     font-style: normal;

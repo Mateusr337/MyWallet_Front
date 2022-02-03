@@ -14,7 +14,7 @@ export default function PageOperation() {
     const { user } = useAuth();
     const [loading, setLoading] = useState(false);
     const [operationData, setOperationData] = useState({
-        value: undefined,
+        value: '',
         description: ""
     });
     const { typeOperation } = useParams();

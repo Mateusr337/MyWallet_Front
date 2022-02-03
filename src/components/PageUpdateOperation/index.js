@@ -17,7 +17,7 @@ export default function PageOperation() {
     const [loading, setLoading] = useState(false);
     const [operationOrigin, setOperationOrigin] = useState();
     const [operationData, setOperationData] = useState({
-        value: undefined,
+        value: '',
         description: ""
     });
 

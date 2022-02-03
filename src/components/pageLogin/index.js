@@ -40,8 +40,8 @@ export default function PageLogin() {
             window.location.reload();
         }).catch(err => {
             toast.error('E-mail ou senha invalido');
+            setTimeout(() => setLoading(false), 5000);
         });
-        setLoading(false);
     }
 
     return (
@@ -58,7 +58,6 @@ export default function PageLogin() {
             </form>
 
             <Button to='/register' >Primeira vez? Cadastre-se!</Button>
-
         </Container>
     );
 }
