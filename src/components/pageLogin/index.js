@@ -49,10 +49,10 @@ export default function PageLogin() {
             <ToastContainer position="top-center" limit={1} />
             <Title />
 
-            <form onSubmit={e => login(e)}>
-                <input type="email" placeholder="E-mail" name='email' value={userLogin.email} onChange={changeInputs} />
-                <input type="password" placeholder="Senha" name='password' value={userLogin.password} onChange={changeInputs} />
-                <button type="submit" disabled={loading}>
+            <form autoComplete='on' onSubmit={e => login(e)}>
+                <input type="email" autoComplete='username' placeholder="E-mail" name='email' value={userLogin.email} onChange={changeInputs} />
+                <input type="password" autoComplete='current-password' placeholder="Senha" name='password' value={userLogin.password} onChange={changeInputs} />
+                <button type="submit" autoComplete='new-password' disabled={loading}>
                     {loading ? <ImgLoad><img src={load} alt={'loading'} /></ImgLoad> : <span>Entrar</span>}
                 </button>
             </form>

@@ -35,11 +35,12 @@ export default function PageRegister() {
         delete userRegister.confirmPassword;
         const promise = axios.post('http://localhost:5000/sign-up', { ...userRegister });
         promise.then(res => {
+            setLoading(true);
             navigate('/');
         }).catch(err => {
-            console.log(err);
+            toast.error('Este usuário já existe');
+            setTimeout(() => setLoading(false), 5000);
         });
-        setLoading(false);
     }
 
     function changeInputs(e) {
@@ -51,13 +52,13 @@ export default function PageRegister() {
             <ToastContainer position="top-center" limit={1} />
             <Title />
 
-            <form onSubmit={e => checkInputs(e)}>
+            <form autoComplete="on" onSubmit={e => checkInputs(e)}>
                 <input type='text' placeholder='Nome' name='name' value={userRegister.name} onChange={changeInputs} />
-                <input type='email' placeholder='E-mail' name='email' value={userRegister.email} onChange={changeInputs} />
-                <input type='password' placeholder='Senha' name='password' value={userRegister.password} onChange={changeInputs} />
-                <input type='password' placeholder='Confirme a senha' name='confirmPassword' value={userRegister.confirmPassword} onChange={changeInputs} />
+                <input type='email' autoComplete='username' placeholder='E-mail' name='email' value={userRegister.email} onChange={changeInputs} />
+                <input type='password' autoComplete='current-password' placeholder='Senha' name='password' value={userRegister.password} onChange={changeInputs} />
+                <input type='password' autoComplete='new-password' placeholder='Confirme a senha' name='confirmPassword' value={userRegister.confirmPassword} onChange={changeInputs} />
                 <button type='submit' disabled={loading}>
-                    {loading ? <ImgLoad><img src={load} alt='Loading' /></ImgLoad> : <span>Entrar</span>}
+                    {loading ? <ImgLoad><img src={load} alt='Loading' /></ImgLoad> : <span>Registrar</span>}
                 </button>
             </form>
 
