@@ -10,7 +10,7 @@ Single application in react of an app to control your money.
 
   <img style='margin: 5px;' src="https://img.shields.io/badge/CSS3%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=CSS3&logoColor=1572B6"/>
   <img style='margin: 5px;' src="https://img.shields.io/badge/HTML5%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=HTML5&logoColor=E34F26"/>
-  <img style='margin: 5px;' src="https://img.shields.io/badge/styled-conponents%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=styled-conponents&logoColor=E34F26"/>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/styledConponents%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=styledConponents&logoColor=E34F26"/>
   <img style='margin: 5px;' src="https://img.shields.io/badge/JSX%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=JSX&logoColor=E34F26"/>
   <img style='margin: 5px;' src="https://img.shields.io/badge/ContextAPI%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=ContextAPI&logoColor=E34F26"/>
   <img style='margin: 5px;' src="https://img.shields.io/badge/axios%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=axios&logoColor=E34F26"/>
