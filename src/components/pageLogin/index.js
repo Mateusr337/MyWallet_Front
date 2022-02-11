@@ -33,7 +33,7 @@ export default function PageLogin() {
             setTimeout(() => setLoading(false), 5000);
             return;
         }
-        const promise = axios.post('http://localhost:5000/sign-in', { ...userLogin });
+        const promise = axios.post(`${process.env.REACT_APP_API}/sign-in`, { ...userLogin });
         promise.then(res => {
             localStorage.setItem('userLogged', JSON.stringify(res.data));
             navigate('/home');

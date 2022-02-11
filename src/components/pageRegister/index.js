@@ -33,7 +33,7 @@ export default function PageRegister() {
             return;
         }
         delete userRegister.confirmPassword;
-        const promise = axios.post('http://localhost:5000/sign-up', { ...userRegister });
+        const promise = axios.post(`${process.env.REACT_APP_API}/sign-up`, { ...userRegister });
         promise.then(res => {
             setLoading(true);
             navigate('/');

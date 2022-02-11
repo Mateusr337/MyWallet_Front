@@ -8,7 +8,7 @@ export default function ConfirmScreen({ setConfirmScreen, operation }) {
     const { user } = useAuth();
 
     function removeOperation() {
-        axios.delete(`http://localhost:5000/operation/${operation.id}`, {
+        axios.delete(`${process.env.REACT_APP_API}/operation/${operation.id}`, {
             headers: { authorization: `Bearer ${user.token}` }
         }).then(res => {
             window.location.reload();

@@ -23,7 +23,7 @@ export default function PageOperation() {
 
     useEffect(() => {
         user !== null && (
-            axios.get(`http://localhost:5000/operation/${idOperation}`,
+            axios.get(`${process.env.REACT_APP_API}/operation/${idOperation}`,
                 { headers: { authorization: `Bearer ${user.token}` } }
             ).then(res => {
                 setOperationData({ value: res.data.value, description: res.data.description });
@@ -47,7 +47,7 @@ export default function PageOperation() {
             setTimeout(() => setLoading(false), 5000);
             return;
         }
-        axios.put(`http://localhost:5000/operation/${idOperation}`,
+        axios.put(`${process.env.REACT_APP_API}/operation/${idOperation}`,
             { ...operationData, type: operationOrigin.type, date: operationOrigin.date },
             { headers: { authorization: `Bearer ${user.token}` } }
         ).then(res => {

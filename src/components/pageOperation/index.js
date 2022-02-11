@@ -34,7 +34,7 @@ export default function PageOperation() {
             setTimeout(() => setLoading(false), 5000);
             return;
         }
-        axios.post('http://localhost:5000/operation',
+        axios.post(`${process.env.REACT_APP_API}/operation`,
             { ...operationData, type: typeOperation },
             { headers: { authorization: `Bearer ${user.token}` } }
         ).then(res => {

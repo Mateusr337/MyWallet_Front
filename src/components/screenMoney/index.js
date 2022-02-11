@@ -14,7 +14,7 @@ export default function ScreenMoney() {
 
     useEffect(() => {
         if (user !== null) {
-            axios.get(`http://localhost:5000/operations/${user._id}`, {
+            axios.get(`${process.env.REACT_APP_API}/operations/${user._id}`, {
                 headers: { authorization: `Bearer ${user.token}` }
             }).then(res => {
                 setHistory(res.data);
