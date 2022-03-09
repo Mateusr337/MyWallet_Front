@@ -11,13 +11,13 @@ Single application in react of an app to control your money.
 ## Technologies
 
 <div>
-  <img style='margin: 5px;' src="https://img.shields.io/badge/React%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=React&logoColor=1572B6"/>
-  <img style='margin: 5px;' src="https://img.shields.io/badge/CSS3%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=CSS3&logoColor=1572B6"/>
-  <img style='margin: 5px;' src="https://img.shields.io/badge/HTML5%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=HTML5&logoColor=E34F26"/>
-  <img style='margin: 5px;' src="https://img.shields.io/badge/styledConponents%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=styledConponents&logoColor=E34F26"/>
-  <img style='margin: 5px;' src="https://img.shields.io/badge/JSX%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=JSX&logoColor=E34F26"/>
-  <img style='margin: 5px;' src="https://img.shields.io/badge/ContextAPI%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=ContextAPI&logoColor=E34F26"/>
-  <img style='margin: 5px;' src="https://img.shields.io/badge/axios%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=axios&logoColor=E34F26"/>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/javascript%20-%2320232a.svg?&style=for-the-badge&color=F7DF1E&logo=javascript&logoColor=000000" />
+  <img style='margin: 5px;' src="https://img.shields.io/badge/CSS3%20-%2320232a.svg?&style=for-the-badge&color=1572B6&logo=CSS3&logoColor=ffffff"/>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/HTML5%20-%2320232a.svg?&style=for-the-badge&color=E34F26&logo=HTML5&logoColor=ffffff"/>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/react%20-%2320232a.svg?&style=for-the-badge&color=363636&logo=react&logoColor=q61DAFB"/>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/context api%20-%2320232a.svg?&style=for-the-badge&color=61DAFB&logo=react&logoColor=000000"/>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/axios%20-%2320232a.svg?&style=for-the-badge&color=000000&logo=axios&logoColor=ffffff"/>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/Vercel%20-%2320232a.svg?&style=for-the-badge&color=000000&logo=Vercel&logoColor=ffffff"/>
 </div>
 
 ## How to run 
