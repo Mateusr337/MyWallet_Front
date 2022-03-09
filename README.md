@@ -18,6 +18,8 @@ Single application in react of an app to control your money.
   <img style='margin: 5px;' src="https://img.shields.io/badge/context api%20-%2320232a.svg?&style=for-the-badge&color=61DAFB&logo=react&logoColor=000000"/>
   <img style='margin: 5px;' src="https://img.shields.io/badge/axios%20-%2320232a.svg?&style=for-the-badge&color=000000&logo=axios&logoColor=ffffff"/>
   <img style='margin: 5px;' src="https://img.shields.io/badge/Vercel%20-%2320232a.svg?&style=for-the-badge&color=000000&logo=Vercel&logoColor=ffffff"/>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/styled components%20-%2320232a.svg?&style=for-the-badge&color=DB7093&logo=styled-components&logoColor=ffffff"/>
+  <img style='margin: 5px;' src="https://img.shields.io/badge/joi%20-%2320232a.svg?&style=for-the-badge&color=000000&logo=joi&logoColor=ffffff"/>
 </div>
 
 ## How to run 
